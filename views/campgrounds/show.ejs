@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-6">
-    <div class="card mb-3" style="width: 18rem">
+    <div class="card mb-3">
       <img src="<%= campground.image%>" class="card-img-top" alt="..." />
       <div class="card-body">
         <h5 class="card-title"><%= campground.title%></h5>
@@ -67,6 +67,12 @@
       <div class="card-body">
         <h5 class="card-title">Rating: <%= review.rating%></h5>
         <p class="card-text">Review: <%= review.body%></p>
+        <form
+          action="/campgrounds/<%= campground._id%>/reviews/<%=review._id%>?_method=DELETE"
+          method="post"
+        >
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </form>
       </div>
     </div>
     <% } %>
